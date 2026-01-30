@@ -5,7 +5,7 @@ require("dotenv").config();
 const app = express();
 connectDB();
 
-app.use(cors()); // 👈 THIS LINE IS VERY IMPORTANT
+app.use(cors()); // 👈 THIS LINE IS VERY IMPORTANT 
 app.use(express.json());
 
 const clipboardRoutes = require("./routes/clipboardRoutes");

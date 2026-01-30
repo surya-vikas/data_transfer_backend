@@ -1,4 +1,4 @@
-const Clipboard = require("../models/Clipboard");
+const Clipboard = require("../models/clipboard");
 
 const SECRET_PIN = process.env.SECRET_PIN;
 
