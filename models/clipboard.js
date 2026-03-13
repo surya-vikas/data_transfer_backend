@@ -1,16 +1,38 @@
 const mongoose = require("mongoose");
 
-const clipboardSchema = new mongoose.Schema({
-  text: {
-    type: String,
+const clipboardSchema = new mongoose.Schema(
+  {
+    title: {
+      type: String,
+      default: "",
+      trim: true,
+    },
+    text: {
+      type: String,
+      default: "",
+    },
+    photo: {
+      type: String,
+      default: null,
+    },
+    pin: {
+      type: String,
+      required: true,
+    },
+    archived: {
+      type: Boolean,
+      default: false,
+    },
+    isDeleted: {
+      type: Boolean,
+      default: false,
+    },
+    deletedAt: {
+      type: Date,
+      default: null,
+    },
   },
-  photo: {
-    type: String, // photo file name
-  },
-  pin: {
-    type: String,
-    required: true,
-  },
-});
+  { timestamps: true }
+);
 
 module.exports = mongoose.model("Clipboard", clipboardSchema);
