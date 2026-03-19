@@ -14,11 +14,13 @@ app.use("/uploads", express.static("uploads"));
 const clipboardRoutes = require("./routes/clipboardRoutes");
 const authRoutes = require("./routes/authRoutes");
 const logsRoutes = require("./routes/logsRoutes");
+const walletRoutes = require("./routes/walletRoutes");
 
 app.use("/clipboard", clipboardRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/login", authRoutes);
 app.use("/api/logs", logsRoutes);
+app.use("/api/wallet", walletRoutes);
 
 app.get("/", (req, res) => {
   res.send("Server is running.");
